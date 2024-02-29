@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTP-8">
+
+<title> Practica 1 Html</title>
+
+</head>
+
+<body>
+
+<script>
+
+let operaciones = function(nro) 
+{
+let r= null;
+if(nro==1)
+{
+r=function (a,b)
+{return a+b;}
+}
+else
+if(nro==2)
+{
+r=function (a,b)
+{return a-b;}
+}
+
+else
+if(nro==3)
+{
+r=function (a,b)
+{return a*b;}
+}
+
+else
+{
+r=function (a,b)
+{return a/b;}
+}
+
+return r;
+}
+
+//llamando a la funcion
+
+let op1= operaciones(1);
+alert(op1(5,3));
+
+let op2= operaciones(2);
+alert(op2(5,3));
+
+let op3= operaciones(3);
+alert(op3(5,3));
+
+let op4= operaciones(4);
+alert(op4(5,3));
+
+</script>
+
+</body>
+</html>

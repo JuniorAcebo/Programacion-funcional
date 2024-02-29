@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica12</title>
+
+    <style>
+        .par{
+            background: beige;
+            color:blue;
+        }
+        .impar{
+            background: yellow;
+            color: blue;
+        }
+        </style>
+        
+    <script>
+        const arrayDatos = [];
+        function adicionar(){
+            let nombre = document.getElementById("txtNombre").value;
+            arrayDatos.push(nombre);
+        }
+
+        function mostrarDatos(){
+            let estilo="par";
+            let nro = 1;
+            let htmlGenerado = "<table border = '1'>";
+            htmlGenerado += "<tr><th>#</th><th>Nombre</th></tr>";
+            arrayDatos.forEach(function(elemento){
+                estilo="par";
+                if(nro%2==1)
+                {estilo="impar";}
+                htmlGenerado = htmlGenerado + "<tr class='"+estilo+"'><td>"+nro +"</td><td>" + elemento + "</td></tr>";
+                nro++;
+            });
+
+            htmlGenerado = htmlGenerado + "</table>";
+            document.getElementById("datos").innerHTML = htmlGenerado;
+        }
+
+        function btnAdicionarClick(){
+            adicionar();
+            mostrarDatos();
+        }
+        
+        window.onload=function(){
+            document.getElementById("btnAdicionar").addEventListener("click",btnAdicionarClick,false);
+        }
+
+    </script>
+
+</head>
+<body>
+    
+    <input type="text" id="txtNombre" placeholder="nombre">
+    <input type="button" id="btnAdicionar" value="adicionar">
+
+    <div id="datos">
+
+    </div>
+
+</body>
+</html>

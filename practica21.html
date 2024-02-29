@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica 21</title>
+
+<script>
+    //realizar un metodo recursivo, que permita invertir los elementos de un array
+    
+    function invertirArray (lista){
+        if (lista.length==0){
+                return lista;   
+            } 
+        else{
+            const [a,...resto]=lista;
+            let b= invertirArray(resto);
+            return [...b,a];
+            }
+    }
+
+    let b=invertirArray([1,2,3,4,5,6,7]);
+    alert(b);
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

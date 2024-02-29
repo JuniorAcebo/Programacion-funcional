@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTP-8">
+
+<title> Practica 1 Html</title>
+
+</head>
+
+<body>
+
+<script>
+
+let precios=[60,15,80,35,100,15,200,70,300,50];
+
+let a= precios.map(function(x){
+if(x<=30)
+{ x= x+(x*0.1);}
+else if ((x>=30) && (x<=50))
+{x= x+(x*0.2);}
+else 
+{x= x+(x*0.3);}
+
+return x;});
+
+alert(a.toString());
+</script>
+
+</body>
+</html>

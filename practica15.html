@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica 15</title>
+
+    <script>
+        function Circulo (h,k,radio){
+    
+            this.h=h;
+            this.k=k;
+            this.radio=radio;
+            this.calcularArea= function(){
+             return 3.1416*radio*radio;
+            }
+
+            this.calcularDiametro= function(){
+             return radio*2;
+            }
+
+        }
+    
+    let c1=new Circulo (3,3,5);
+    let c2=new Circulo (4,4,8);
+    let c3=new Circulo (3,5,10);
+    
+    let a1= c1.calcularArea();
+    alert("area c1: "+ a1);
+    let d1=c1.calcularDiametro();
+    alert("diametro c1: "+d1);
+
+    let a2= c2.calcularArea();
+    alert("area c2: "+ a2);
+    let d2=c2.calcularDiametro();
+    alert("diametro c2: "+d2);
+
+    let a3= c3.calcularArea();
+    alert("area c3: "+ a3);
+    let d3=c3.calcularDiametro();
+    alert("diametro c3: "+d3);
+   
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

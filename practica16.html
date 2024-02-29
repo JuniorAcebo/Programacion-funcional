@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica 16</title>
+
+<script>
+    
+    function crearProducto(cod,nombre,precio){
+        var objeto={};
+        objeto.cod= cod;
+        objeto.nombre=nombre;
+        objeto.precio=precio;
+        objeto.incrementarPrecio = function (porc){
+            let x= this.precio+this.precio * porc/100;
+            this.precio=x;
+        }
+        return objeto;
+    }
+
+    //tosting
+    let p1= crearProducto(100,"Coca cola",12);
+    let p2= crearProducto(100,"Fanta",12);
+    let p3= crearProducto(300,"Leche 1 lts pil",7);
+    
+    p1.incrementarPrecio(10);
+    p2.incrementarPrecio(50);
+    p3.incrementarPrecio(20);
+
+    alert(p1.nombre+" Precio bs: "+p1.precio);
+    alert(p2.nombre+" Precio bs: "+p2.precio);
+    alert(p3.nombre+" Precio bs: "+p3.precio);
+
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>

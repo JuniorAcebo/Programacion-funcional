@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensayar</title>
+
+
+</head>
+<body>
+   <script>
+    let n=[1,2,1,4,5,6,6,5,4,9];
+    //alert(n);
+    let nFiltro = n.filter(x=>x>2);
+    //alert(nFiltro);
+    let nfiltro= n.filter(function(x){return x%2==1});
+    //alert(nfiltro);
+    let nmap= n.map(function(x){return x*0});
+    //alert(nmap);
+    let nredu = n.reduce(function(aum,x){return aum+x},0);
+    //alert (nredu);
+    let Multi= n.reduce((acum,x)=>acum*x,1);
+    //alert(Multi);
+    let sumaImpares= function(a){
+        let b=a.filter(function(x){return x%2==1});
+        let c=b.reduce(function(acum1,b){return acum1+b},0);
+        return c;
+    }
+    let y=sumaImpares(n);
+    alert(y);
+   </script>
+</body>
+</html>

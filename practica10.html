@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica 10</title>
+</head>
+<body>
+    <script>
+        //realizar un programa para obtener el producto de los elementos del array
+        let a=[3,1,2,2,4,1,2,2];
+
+        let multi=function(acumulado,valor){
+            return acumulado*valor;
+        }
+        let resultado2 = a.reduce (multi,1);
+        alert ("resultado: " + resultado2);
+
+
+    </script>
+</body>
+</html>

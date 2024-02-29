@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica 11</title>
+
+    <script>
+    const frutas=["mandarina","naraja","manzana","pera","piña","uva"];
+    const Dpto= ["La Paz","Santa Cruz","Cochabamba","Beni","Pando","Tarija","Potosi","Oruro","Chuquisaca"];
+
+    function mostrarDatos(array, idSelect){
+        let htmlGenerado="<select id='cb01'>";
+        array.forEach(function(elemento){
+            htmlGenerado=htmlGenerado+"<option>"+elemento+"</option>";
+        });
+
+        htmlGenerado=htmlGenerado+"</select>";
+        let cajaDiv= document.getElementById(idSelect);
+        cajaDiv.innerHTML=htmlGenerado;
+    }
+
+    function bt1Click(){
+        mostrarDatos(frutas,"datos");
+    }
+
+    function bt2Click(){
+        mostrarDatos(Dpto,"departamentos");
+    }
+
+    window.onload=function(){
+        document.getElementById("btn1").addEventListener('click',bt1Click,false);
+        document.getElementById("btn2").addEventListener('click',bt2Click,false);
+    }
+
+    </script>
+</head>
+<body>
+    <input type="button" id="btn1" value="mostrar frutas" />
+    <input type="button" id="btn2" value="mostrar Departamentos" />
+
+    <div id="datos">
+    </div>
+
+    <div id="departamentos">
+    </div>
+    
+</body>
+</html>

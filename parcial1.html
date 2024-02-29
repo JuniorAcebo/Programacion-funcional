@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial 1</title>
+
+    <script>
+
+    const ListaImc=[];
+
+        function Persona(altura,peso)
+        {
+            this.altura=altura;
+            this.peso=peso;
+        }
+
+        function adicionar(){
+                let a = document.getElementById("txtAltura").value;
+                let p = document.getElementById("txtPeso").value;
+                let c = new Persona(a,p);
+                ListaImc.push(c);
+            }
+
+        function calcularIMC(persona) {
+        return persona.peso / Math.pow(persona.altura, 2);}
+
+  
+
+        function btnCalcularClick(){
+                let imc=calcularIMC(ListaImc);
+                alert(" Estado IMC: "+imc)
+            
+        }
+
+
+        window.onload= function(){
+            document.getElementById("btnCalcularImc").addEventListener("click",btnCalcularClick,false);
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Calcular Imc</h1>
+    Altura: <input type="text" id="textAltura">
+    Peso: <input type="text" id="textPeso">
+    <input type="button" id="btnCalcularImc" value="CalcularImc">
+    <div id="datos">
+    </div>
+</body>
+</html>

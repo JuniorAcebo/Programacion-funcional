@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica 20</title>
+
+    <script>
+        //la resursividad resuelve el 99% del problema si y  solo si el 1% lo resuleve bien
+
+        //realizar una funcion recursiva para obtener la suma de los numeros impares
+        function sumarImpares (lista)
+        {
+            if (lista.length==0){
+                return 0;   
+            } else{
+                const [a,...resto]=lista;
+                let s= sumarImpares(resto);
+                if(a%2==1){
+                    return s+a;
+                }else return s;
+            }
+        }
+
+
+        let s=sumarImpares([7,2,4,3,5,6,3,2,1]);
+        alert(s);
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

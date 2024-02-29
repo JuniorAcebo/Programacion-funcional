@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica 14</title>
+
+<script>
+    function Persona(nombre,apellido,edad,gustos){
+
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.edad=edad;
+        this.gustos=gustos;
+        this.mostrar= function(){
+         alert("Nombre: "+this.nombre+" "+this.apellido+" "+this.edad+" "+this.gustos.toString());
+
+        }
+    }
+
+let p1=new Persona ("Ana","Lima",27,["NARANJA ","PIÑA ","UVA"]);
+let p2=new Persona ("Brenda","Camargo",40,["FRUTILLA ","MANZANA"]);
+
+p1.mostrar();
+p2.mostrar();
+
+</script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica 13</title>
+
+
+    <script>
+
+        window.onload= function(){
+
+            let mascota= {
+                "nombre":"boby",
+                "edad":20,
+                "raza":"pilfrut",
+                "dirrecion":{"calle":"San Marcos","nro":20,"ciudad":"Santa Cruz"},
+                "emitirsonido":function(){alert("Guau!!");}
+            }
+
+            //alert(mascota["nombre"]);
+            alert(mascota.nombre);
+            alert(mascota["raza"]);
+            mascota.emitirsonido();
+            //alert(mascota.dirrecion["calle"]);
+            alert(mascota.dirrecion.calle);
+            
+        }
+
+    </script>
+
+</head> 
+<body>
+    
+</body>
+</html>

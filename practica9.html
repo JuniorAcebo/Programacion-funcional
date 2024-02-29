@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica 9</title>
+</head>
+<body>
+    
+    <script>
+        let suma=(a,b)=>a+b;
+        let a=[3,1,2,4,2,1,6];
+        let resultado1= a.reduce(suma,0);
+        alert("la sumatoria es: " + resultado1);
+
+        
+        let suma2=function(acumulado,valor){
+            return acumulado+valor;
+        }
+        let resultado2 = a.reduce (suma2,0);
+        alert ("Otra sumatoria es: " + resultado2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>practica 17</title>
+
+        <script>
+            const clientes = [];
+            function Cliente(nombre,direccion,telefono,genero){
+                    this.nombre = nombre;
+                    this.direccion = direccion;
+                    this.telefono = telefono;
+                    this.genero = genero;   
+            }
+
+            function adicionar(){
+                let n = document.getElementById("txtNombre").value;
+                let d = document.getElementById("txtDireccion").value;
+                let t = document.getElementById("txtTelefono").value;
+                let g = "M";
+
+                if(document.getElementById("rbGeneroF").checked){
+                    g = "F";
+                }
+
+                let c = new Cliente(n,d,t,g);
+                clientes.push(c)
+            }
+
+            
+            function mostrar(arrayClientes){
+                let h = "<table border = '1'>";
+                    h+="<tr>";
+                    h+="<th>#</th>";
+                    h+="<th>Nombre</th>";
+                    h+="<th>Direccion</th>";
+                    h+="<th>telefono</th>";
+                    h+="<th>genero</th>";
+                    h+="</tr>";
+
+                    let i = 1;
+
+                    arrayClientes.forEach(function(x){
+                        let n = x.nombre;
+                        let d = x.direccion;
+                        let t = x.telefono;
+                        let g = x.genero;
+                        h+="<tr>";
+                        h+="<td>" + i + "</td>";
+                        h+="<td>" + n + "</td>";
+                        h+="<td>" + d + "</td>";
+                        h+="<td>" + t + "</td>";
+                        h+="<td>" + g + "</td>";
+                        h+="</tr>"
+                        i++;
+                    })
+
+                    h+="</table>";
+                    return h;
+                }
+                     
+                window.onload = function(){
+                    function btnAdicionarClick(){
+                        adicionar();
+                        let a = mostrar(clientes);
+                        document.getElementById("datos").innerHTML = a;
+                    }
+
+                    function btnMostrarTodosClick(){
+                        let a = mostrar(clientes)
+                        document.getElementById("datos").innerHTML = a;
+                    }
+
+                    function btnMostraPorGenero(){ 
+                        let r = null;
+                        if(document.getElementById("rbGeneroM").checked)   
+                        {r = clientes.filter(function(x){ return x.genero == "M"} ) 
+                    } else{
+                        r = clientes.filter(function(x){ return x.genero == "F"} ) 
+                    } 
+
+                    let h = mostrar(r);
+                    document.getElementById("datos").innerHTML = h;
+
+                    }
+
+                    document.getElementById("btnAdicionar").addEventListener("click", btnAdicionarClick, false);
+                    document.getElementById("btnMostrar").addEventListener("click", btnMostrarTodosClick, false);
+                    document.getElementById("btnMostrarGenero").addEventListener("click", btnMostraPorGenero, false)
+
+
+                }
+            </script>
+           
+           
+    </head>
+    <body>  
+        
+        <h1>Clientes</h1>
+        <input type="text" id="txtNombre" placeholder="Escriba su nombre"> <br>
+
+        <h2>direccion:</h2>
+        <input type="text" id="txtDireccion" placeholder="Escriba su direccion"> <br>
+
+        <h2>telefono:</h2>
+        <input type="text" id="txtTelefono" placeholder="Escriba su telefono"> <br>
+
+        <h2>genero:</h2>
+        F<input type="radio" id="rbGeneroF" name="rbGenero" value="F">
+        M<input type="radio" id="rbGeneroM" name="rbGenero" value="M"> <br>
+
+        <input type="button" id="btnAdicionar" value="adicionar">
+        <input type="button" id="btnMostrar" value="Show All">
+        <input type="button" id="btnMostrarGenero" value="Mostrar por genero">
+
+        <div id="datos">
+
+        </div>
+
+    </body>
+    </html>
